@@ -1,3 +1,5 @@
+import { assetUrl } from '../../utils/assetUrl'
+
 /**
  * SinglePhotoModal — exibe uma única foto centralizada com título e legenda opcionais.
  */
@@ -11,7 +13,7 @@ export default function SinglePhotoModal({ data }) {
       )}
 
       <img
-        src={data.src}
+        src={assetUrl(data.src)}
         alt={data.caption ?? data.title ?? ''}
         className="max-h-[70vh] w-auto max-w-full rounded-xl object-contain shadow-xl"
       />

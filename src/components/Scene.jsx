@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HOTSPOTS, RADIO } from "../config/content";
 import HotSpot from "./HotSpot";
 import RadioModal from "./modals/RadioModal";
+import { assetUrl } from "../utils/assetUrl";
 
 /**
  * Scene — container 16:9 com bg.jpg e hotspots posicionados.
@@ -26,7 +27,7 @@ export default function Scene({ onHotSpotClick }) {
     >
       {/* Imagem de fundo — ocupa 100% do container */}
       <img
-        src="/bg.jpg"
+        src={assetUrl("/bg.jpg")}
         alt="Quarto de aniversário"
         className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
         draggable={false}

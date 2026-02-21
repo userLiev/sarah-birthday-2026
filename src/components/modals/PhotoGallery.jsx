@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { GALLERIES } from '../../config/content'
+import { assetUrl } from '../../utils/assetUrl'
 
 /**
  * PhotoGallery — grid de fotos com lightbox embutido.
@@ -42,7 +43,7 @@ export default function PhotoGallery({ galleryId }) {
     return (
       <div className="flex flex-col items-center gap-5">
         <img
-          src={photo.src}
+          src={assetUrl(photo.src)}
           alt={photo.caption ?? ''}
           className="max-h-[58vh] w-auto rounded-xl object-contain shadow-xl"
         />
@@ -95,7 +96,7 @@ export default function PhotoGallery({ galleryId }) {
             className="group relative aspect-square rounded-xl overflow-hidden bg-white/5 hover:ring-2 hover:ring-amber-300/60 transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber-300/80"
           >
             <img
-              src={photo.src}
+              src={assetUrl(photo.src)}
               alt={photo.caption ?? ''}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />

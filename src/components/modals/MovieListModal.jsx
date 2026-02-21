@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { assetUrl } from '../../utils/assetUrl'
 
 /**
  * MovieListModal — grid de filmes clicáveis, igual à galeria de fotos.
@@ -29,7 +30,7 @@ export default function MovieListModal({ data }) {
       <div className="flex flex-col items-center gap-5">
         {movie.poster ? (
           <img
-            src={movie.poster}
+            src={assetUrl(movie.poster)}
             alt={`Poster de ${movie.title}`}
             className="max-h-[58vh] w-auto rounded-xl object-contain shadow-xl"
           />
@@ -90,7 +91,7 @@ export default function MovieListModal({ data }) {
         >
           {movie.poster ? (
             <img
-              src={movie.poster}
+              src={assetUrl(movie.poster)}
               alt={`Poster de ${movie.title}`}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
